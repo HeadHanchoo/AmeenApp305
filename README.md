@@ -62,6 +62,8 @@ and now am gonna show you the visual guide:
 
 
 and yeah this is the App thanks for reading, and forgive me if the read me is not the cleanest this is the first read i ever did.
+Bassam Barak – Software Engineering Student 
+For CPIT305 - Professor: Dr. Khalid
 
 
 
