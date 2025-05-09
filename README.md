@@ -1,6 +1,7 @@
 Ameen App 🧕🇸🇦
 Ameen is a smart desktop assistant built using **Java Swing**, **FlatLaf**, and the **OpenAI API** to help elderly users in Saudi Arabia navigate essential digital services like **Absher**, **Tawakkalna**, and **SNB**.
-🎯 Key Features
+
+🎯 Key Features:
 
 - 🔊 Voice-to-text  and Text-to-Voice support using PowerShell
 - 💬 Real-time AI responses via OpenAI's GPT
