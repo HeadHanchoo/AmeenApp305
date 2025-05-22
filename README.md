@@ -1,10 +1,11 @@
 Ameen App 🧕🇸🇦
-Ameen is a smart desktop assistant built using **Java Swing**, **FlatLaf**, and the **OpenAI API** to help elderly users in Saudi Arabia navigate essential digital services like **Absher**, **Tawakkalna**, and **SNB**.
+This is my final project for CPIT 305. It’s a simple Java desktop app I built to help elderly users in Saudi Arabia do basic stuff like check their ID on Tawakkalna, see car violations on Absher, or transfer money on SNB. I wanted it to be as easy as possible, so it has visual guides and even voice support.
+
 
 🎯 Key Features:
-
+- Simple and clean UI using Java Swing
 - 🔊 Voice-to-text  and Text-to-Voice support using PowerShell
-- 💬 Real-time AI responses via OpenAI's GPT
+- 💬 Real-time AI responses via OpenAI's API
 - 📖 Visual step-by-step guides for key services
 - ❓ FAQ search with built-in database
 - 🌓 Light/Dark mode toggle with FlatLaf
@@ -13,13 +14,14 @@ Ameen is a smart desktop assistant built using **Java Swing**, **FlatLaf**, and 
 - 🧠 Persistent chat memory and system instructions
 - 🗃️ SQLite database integration for FAQs
 
-- ⚙️ Technologies Used
-
+## 🧪 What I Used:
 - Java Swing (GUI)
 - FlatLaf (Modern Look & Feel)
 - OpenAI API (Language Model)
 - PowerShell (Voice input/output)
 - SQLite (FAQ database)
+- Maven (to manage everything)
+- JUnit (I added test cases for the database)
 
 - 📁 File Structure
 
