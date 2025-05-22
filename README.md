@@ -1,3 +1,4 @@
+
 Ameen App 🧕🇸🇦
 This is my final project for CPIT 305. It’s a simple Java desktop app I built to help elderly users in Saudi Arabia do basic stuff like check their ID on Tawakkalna, see car violations on Absher, or transfer money on SNB. I wanted it to be as easy as possible, so it has visual guides and even voice support.
 
@@ -14,6 +15,8 @@ This is my final project for CPIT 305. It’s a simple Java desktop app I built 
 - 🧠 Persistent chat memory and system instructions
 - 🗃️ SQLite database integration for FAQs
 
+---
+
 ## 🧪 What I Used:
 - Java Swing (GUI)
 - FlatLaf (Modern Look & Feel)
@@ -23,7 +26,7 @@ This is my final project for CPIT 305. It’s a simple Java desktop app I built 
 - Maven (to manage everything)
 - JUnit (I added test cases for the database)
 
-
+---
 ## 📁 File Structure:
 - `Main.java` – Main app logic and UI window
 - `GuideViewer.java` – Shows visual step-by-step guides (SNB, Absher, Tawakkalna)
@@ -48,13 +51,13 @@ This is my final project for CPIT 305. It’s a simple Java desktop app I built 
 ##
 
 
-
+---
 ## 🖥️ How It Works (Walkthrough):
 After launching the app, you're greeted with a simple and clean interface designed for elderly users.
 Everything is built to be clear, readable, and easy to follow—even for someone not used to tech.
 
 <img src="https://github.com/user-attachments/assets/149652bf-7060-4f60-bf92-2183d91876be" width="500"/>
-
+---
 ## 🧠 AI Chat Assistant
 The main screen features the assistant (Ameen), who can answer questions about government services like Absher and Tawakkalna.
 - It supports both typed and voice input (via PowerShell).
@@ -73,13 +76,13 @@ Font size also adjusts based on user preferences.
   <img src="https://github.com/user-attachments/assets/e084f935-323a-45a9-8f9e-5a0701908a79" width="400"/>
   <img src="https://github.com/user-attachments/assets/cb69e7c5-510d-4468-b771-26dfda833f3b" width="400"/>
 </p>
-
+---
 ## 🔍 FAQ Section
 -There’s a built-in FAQ viewer where users can search or scroll for common questions
 
 <img src="https://github.com/user-attachments/assets/fe9a3cfe-0bbe-4d0c-b3d1-65f504ea93c0" width="500"/>
 
-
+---
 ## 📸 Visual Step-by-Step Guides
 Visual guides walk users through actual screens for:
 - How to transfer money in SNB
@@ -94,7 +97,7 @@ Visual guides walk users through actual screens for:
 
 <img src="https://github.com/user-attachments/assets/1b35bc78-b0f6-4b71-b5d2-14b7e1dc28f3" width="250"/> <img src="https://github.com/user-attachments/assets/9678697c-2a0b-4d2b-8d69-1180de68a56d" width="300"/> </div>
 
-
+---
 ## ✅ Final Updates Based on Feedback
 After receiving feedback from Professor Khalid on the initial submission, I made the following changes:
 1. ✅Multithreading Thread Management
@@ -175,8 +178,9 @@ worker.execute();
    ![image](https://github.com/user-attachments/assets/1c198778-672e-4bd0-88e2-df7aaedafb76)
 
 5. ✅README / Documentation
+   - Feedback: "Lacks professional formatting"
    - i rewrote the README in a cleaner, better formatted , and more professional tone,
-
+---
 ##  👤 Made By
 - Bassam Barak
 - Student ID: [2236668]
