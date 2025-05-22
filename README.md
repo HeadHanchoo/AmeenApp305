@@ -15,6 +15,8 @@ This is my final project for CPIT 305. It’s a simple Java desktop app I built 
 - [✅ Final Updates Based on Feedback](#-final-updates-based-on-feedback)
 - [👨‍💻 Made By](#-made-by)
 
+---
+
 ## 🎯 Key Features:
 - Simple and clean UI using Java Swing
 - 🔊 Voice-to-text  and Text-to-Voice support using PowerShell
