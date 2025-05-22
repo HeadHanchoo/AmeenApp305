@@ -38,6 +38,7 @@ This is my final project for CPIT 305. It’s a simple Java desktop app I built 
 - `memory.json` – Stores basic memory of the assistant (Q&A pairs)
 - `ameen.db` – SQLite database file used by the app (stored under `resources/data/`)
 - `pom.xml` – Maven build file with all dependencies and config
+  
 ## 🧠 How to Run It:
 1. Make sure you have Java 17 and Maven installed.
 2. Clone the project:
@@ -57,7 +58,7 @@ After launching the app, you're greeted with a simple and clean interface design
 Everything is built to be clear, readable, and easy to follow—even for someone not used to tech.
 
 <img src="https://github.com/user-attachments/assets/149652bf-7060-4f60-bf92-2183d91876be" width="500"/>
----
+
 ## 🧠 AI Chat Assistant
 The main screen features the assistant (Ameen), who can answer questions about government services like Absher and Tawakkalna.
 - It supports both typed and voice input (via PowerShell).
