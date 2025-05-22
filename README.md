@@ -1,7 +1,19 @@
 
 Ameen App 🧕🇸🇦
 This is my final project for CPIT 305. It’s a simple Java desktop app I built to help elderly users in Saudi Arabia do basic stuff like check their ID on Tawakkalna, see car violations on Absher, or transfer money on SNB. I wanted it to be as easy as possible, so it has visual guides and even voice support.
+## 🧭 Table of Contents
 
+- [🎯 Key Features](#-key-features)
+- [🧪 What I Used](#-what-i-used)
+- [📁 File Structure](#-file-structure)
+- [🧠 How to Run It](#-how-to-run-it)
+- [🖥️ How It Works (Walkthrough)](#-how-it-works-walkthrough)
+- [💬 AI Chat Assistant](#-ai-chat-assistant)
+- [🌗 Light & Dark Mode](#-light--dark-mode)
+- [🔍 FAQ Section](#-faq-section)
+- [🖼️ Visual Step-by-Step Guides](#-visual-step-by-step-guides)
+- [✅ Final Updates Based on Feedback](#-final-updates-based-on-feedback)
+- [👨‍💻 Made By](#-made-by)
 
 ## 🎯 Key Features:
 - Simple and clean UI using Java Swing
@@ -49,7 +61,7 @@ This is my final project for CPIT 305. It’s a simple Java desktop app I built 
    mvn compile
    mvn exec:java -Dexec.mainClass="Main"
 
-##
+
 
 
 ---
