@@ -24,7 +24,7 @@ This is my final project for CPIT 305. It’s a simple Java desktop app I built 
 - JUnit (I added test cases for the database)
 
 
-- 📁 File Structure
+📁 File Structure
 
 - `Main.java` – Main app logic and UI
 - `GuideViewer.java` – App visual guides (e.g., SNB, Absher)
