@@ -10,19 +10,19 @@ public class GuideViewer {
 
     static {
         guideImages.put("SNB: How to Transfer Money", new String[]{
-                "src/assets/guides/SNB_page1.png",
-                "src/assets/guides/SNB_page2.png",
-                "src/assets/guides/SNB_page3.png",
-                "src/assets/guides/SNB_page4.png"
+                "src/main/resources/assets/guides/SNB_page1.png",
+                "src/main/resources/assets/guides/SNB_page2.png",
+                "src/main/resources/assets/guides/SNB_page3.png",
+                "src/main/resources/assets/guides/SNB_page4.png"
         });
         guideImages.put("Absher: How to Check for Car Violations", new String[]{
-                "src/assets/guides/Absher_page1.png",
-                "src/assets/guides/Absher_page2.png",
-                "src/assets/guides/Absher_page3.png"
+                "src/main/resources/assets/guides/Absher_page1.png",
+                "src/main/resources/assets/guides/Absher_page2.png",
+                "src/main/resources/assets/guides/Absher_page3.png"
         });
         guideImages.put("Tawakkalna: How to See National ID", new String[]{
-                "src/assets/guides/Tawakkalna_page1.png",
-                "src/assets/guides/Tawakkalna_page2.png"
+                "src/main/resources/assets/guides/Tawakkalna_page1.png",
+                "src/main/resources/assets/guides/Tawakkalna_page2.png"
         });
     }
 
@@ -32,9 +32,9 @@ public class GuideViewer {
         frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 
         Map<String, String> guideTitles = new LinkedHashMap<>();
-        guideTitles.put("SNB: How to Transfer Money", "src/assets/guides/SNB_logo.png");
-        guideTitles.put("Absher: How to Check for Car Violations", "src/assets/guides/Absher_logo.png");
-        guideTitles.put("Tawakkalna: How to See National ID", "src/assets/guides/Tawakkalna_logo.png");
+        guideTitles.put("SNB: How to Transfer Money", "src/main/resources/assets/guides/SNB_logo.png");
+        guideTitles.put("Absher: How to Check for Car Violations", "src/main/resources/assets/guides/Absher_logo.png");
+        guideTitles.put("Tawakkalna: How to See National ID", "src/main/resources/assets/guides/Tawakkalna_logo.png");
 
         for (Map.Entry<String, String> entry : guideTitles.entrySet()) {
             JPanel card = new JPanel();

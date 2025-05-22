@@ -21,6 +21,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 import javax.swing.plaf.FontUIResource;
+import java.nio.charset.StandardCharsets;
+
 
 
 
@@ -51,7 +53,7 @@ public class Main {
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setOpaque(false);
 
-        ImageIcon logo = new ImageIcon("src/assets/ameen_logo.png");
+        ImageIcon logo = new ImageIcon("src/main/resources/assets/ameen_logo.png");
         JLabel logoLabel = new JLabel(logo);
         logoLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         mainPanel.add(logoLabel);
@@ -154,8 +156,8 @@ public class Main {
         mainPanel.add(Box.createRigidArea(new Dimension(0, 10)));
         mainPanel.add(resetPanel);
 
-        ImageIcon darkIcon = new ImageIcon("src/assets/dark_icon.png");
-        ImageIcon lightIcon = new ImageIcon("src/assets/light_icon.png");
+        ImageIcon darkIcon = new ImageIcon("src/main/resources/assets/dark_icon.png");
+        ImageIcon lightIcon = new ImageIcon("src/main/resources/assets/light_icon.png");
         int iconSize = 35;
         darkIcon = new ImageIcon(darkIcon.getImage().getScaledInstance(iconSize, iconSize, Image.SCALE_SMOOTH));
         lightIcon = new ImageIcon(lightIcon.getImage().getScaledInstance(iconSize, iconSize, Image.SCALE_SMOOTH));
@@ -201,24 +203,41 @@ public class Main {
             String userInput = searchField.getText();
             if (!userInput.isEmpty()) {
                 checkAndStoreMemory(userInput);
-                String response = getOpenAIResponse(userInput);
-                speak(response);
+
+                new SwingWorker<String, Void>() {
+                    @Override
+                    protected String doInBackground() throws Exception {
+                        return getOpenAIResponse(userInput);
+                    }
+
+                    @Override
+                    protected void done() {
+                        try {
+                            String response = get();
+                            speak(response); // still runs on UI thread
+
+                            addMessage("Ameen: " + response);
+                            chatHistory.add(Map.of("role", "user", "content", userInput));
+                            chatHistory.add(Map.of("role", "assistant", "content", response));
+                            chatScrollPane.getVerticalScrollBar().setValue(chatScrollPane.getVerticalScrollBar().getMaximum());
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
+                    }
+                }.execute();
 
                 searchField.setText("");
 
                 chatHistory.add(Map.of("role", "user", "content", userInput));
-                chatHistory.add(Map.of("role", "assistant", "content", response));
-
                 int maxMessages = 10;
                 if (chatHistory.size() > maxMessages * 2) {
                     chatHistory = chatHistory.subList(chatHistory.size() - maxMessages * 2, chatHistory.size());
                 }
 
                 addMessage("You: " + userInput);
-                addMessage("Ameen: " + response);
-                chatScrollPane.getVerticalScrollBar().setValue(chatScrollPane.getVerticalScrollBar().getMaximum());
             }
         });
+
 
         frame.setVisible(true);
         DatabaseManager.initializeDatabase();
@@ -235,8 +254,7 @@ public class Main {
 
     public static String getOpenAIResponse(String userInput) {
         try {
-            String apiKey = System.getenv("OPENAI_API_KEY Removed so i can push the code in github Profssor Khalid ");
-
+            String apiKey = "api key removed for GitHub safety reasons so i can push with with github, sorry Professor Khalid :)";
             URL url = new URL("https://api.openai.com/v1/chat/completions");
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -330,30 +348,39 @@ public class Main {
 
 
 
-    public static void loadMemory() {
-        try {
-            String content = new String(Files.readAllBytes(Paths.get("memory.json")));
-            if (!content.isEmpty()) {
-                JSONObject json = new JSONObject(content);
-                for (String key : json.keySet()) {
-                    memory.put(key, json.getString(key));
+    public static synchronized void loadMemory() {
+        try (InputStream is = Main.class.getResourceAsStream("/data/memory.json")) {
+            if (is != null) {
+                String content = new String(is.readAllBytes(), StandardCharsets.UTF_8);
+                if (!content.isEmpty()) {
+                    JSONObject json = new JSONObject(content);
+                    for (String key : json.keySet()) {
+                        memory.put(key, json.getString(key));
+                    }
                 }
+            } else {
+                System.out.println("memory.json not found in resources.");
             }
         } catch (Exception e) {
-            System.out.println("No memory found, starting fresh.");
+            System.out.println("Failed to load memory: " + e.getMessage());
         }
     }
 
-    public static void saveMemory() {
+
+    public static synchronized void saveMemory() {
+        JSONObject json = new JSONObject(memory);
         try {
-            JSONObject json = new JSONObject(memory);
-            FileWriter writer = new FileWriter("memory.json");
-            writer.write(json.toString(2));
-            writer.close();
+            // Write to the resources folder under target/classes/data
+            File file = new File("src/main/resources/data/memory.json");
+            try (FileWriter writer = new FileWriter(file)) {
+                writer.write(json.toString(2)); // Pretty print with indentation
+            }
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("❌ Failed to save memory.");
         }
     }
+
 
     public static void checkAndStoreMemory(String userInput) {
         userInput = userInput.toLowerCase();

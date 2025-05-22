@@ -9,7 +9,8 @@ import java.sql.ResultSet;
 
 
 public class DatabaseManager {
-    private static final String DB_URL = "jdbc:sqlite:src/data/ameen.db";
+    private static final String DB_URL = "jdbc:sqlite:src/main/resources/data/ameen.db";
+
 
     public static Connection connect() throws SQLException {
         return DriverManager.getConnection(DB_URL);

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AmeenApp305.iml" filepath="$PROJECT_DIR$/AmeenApp305.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ameen-app.iml" filepath="$PROJECT_DIR$/ameen-app.iml" />
     </modules>
   </component>
 </project>
